@@ -1,0 +1,22 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require_relative '../lib/csv_detective'
+
+if ARGV.empty?
+  puts "Usage: csv_detective_demo <path_to_csv>"
+  exit 1
+end
+
+path = ARGV[0]
+result = CSVDetective::Detector.detect(path)
+
+puts "File: #{path}"
+puts "Detected encoding : #{result[:encoding]}"
+puts "Detected delimiter: #{result[:delimiter].inspect}"
+puts "Detected quote    : #{result[:quote_char].inspect}"
+puts
+puts "You can use these values with CSV.foreach like:"
+puts "CSV.foreach('file.csv', col_sep: #{result[:delimiter].inspect}, quote_char: #{result[:quote_char].inspect}, encoding: '#{result[:encoding]}:UTF-8') do |row|"
+puts "  p row"
+puts "end"
