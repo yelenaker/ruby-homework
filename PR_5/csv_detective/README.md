@@ -22,4 +22,7 @@ Detected delimiter: ","
 Detected quote    : "\""
 
 
+
 Можу додати скріншот терміналу, щоб показати, що все працює.
+
+<img width="824" height="587" alt="image" src="https://github.com/user-attachments/assets/daa095bb-a669-4745-a21a-7e98a724a10d" />
